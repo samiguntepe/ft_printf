@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 10:30:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/08 10:06:08 by sguntepe         ###   ########.fr       */
+/*   Created: 2022/10/07 11:40:19 by sguntepe          #+#    #+#             */
+/*   Updated: 2022/11/26 16:56:27 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_format(va_list arg, char c);
-int	ft_int(int a);
-int	ft_hex(unsigned int a, char c);
-int	ft_point(unsigned long a, int sign);
-int	ft_string(char *str);
-int	ft_unsigned(unsigned int a);
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i] = c;
+		i++;
+	}
+	return (b);
+}
+
+// #include <stdio.h>
+
+// int	main(){
+
+// 	char dizi[] = "Merhaba42";
+// 	printf("%s",ft_memset(dizi,'c',3));
+
+//     return 0;
+// }
+
+// c değeri len değeri kadar b dizisine kopyalanır.

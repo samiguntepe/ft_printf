@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 10:30:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/08 10:06:08 by sguntepe         ###   ########.fr       */
+/*   Created: 2022/10/09 12:22:12 by sguntepe          #+#    #+#             */
+/*   Updated: 2022/11/26 16:55:01 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include	"libft.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_format(va_list arg, char c);
-int	ft_int(int a);
-int	ft_hex(unsigned int a, char c);
-int	ft_point(unsigned long a, int sign);
-int	ft_string(char *str);
-int	ft_unsigned(unsigned int a);
+char	*ft_strchr(const char *s, int c)
+{
+	int	s_len;
 
-#endif
+	s_len = ft_strlen(s);
+	while (s_len >= 0)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+		s_len--;
+	}
+	return (NULL);
+}
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	char str[] = "Merhaba42";
+// 	printf("%s",ft_strchr(str,'b'));
+
+// }
+
+//Bulunan karakterden "c" itibaren sayar ve döndürür.

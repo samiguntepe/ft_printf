@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 10:30:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/08 10:06:08 by sguntepe         ###   ########.fr       */
+/*   Created: 2022/10/18 15:20:49 by sguntepe          #+#    #+#             */
+/*   Updated: 2022/11/26 17:00:55 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_format(va_list arg, char c);
-int	ft_int(int a);
-int	ft_hex(unsigned int a, char c);
-int	ft_point(unsigned long a, int sign);
-int	ft_string(char *str);
-int	ft_unsigned(unsigned int a);
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
+}
 
-#endif
+//#include <fcntl.h>
+
+// int main()
+// {
+//     int fd= open("/Users/sguntepe/Desktop/test.txt",1);
+//     ft_putstr_fd("Merhaba 42 Kocaeli",fd);
+// }
+
+// fd dosyasına s dizisini yazar.

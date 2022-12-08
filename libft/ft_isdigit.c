@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 10:30:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/08 10:06:08 by sguntepe         ###   ########.fr       */
+/*   Created: 2022/10/17 12:43:41 by sguntepe          #+#    #+#             */
+/*   Updated: 2022/11/29 13:02:54 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_format(va_list arg, char c);
-int	ft_int(int a);
-int	ft_hex(unsigned int a, char c);
-int	ft_point(unsigned long a, int sign);
-int	ft_string(char *str);
-int	ft_unsigned(unsigned int a);
+int	ft_isdigit(int c)
+{
+	return (c <= '9' && c >= '0');
+}
 
-#endif
+// Fonksiyona girilen parametrenin rakam 
+// olup olmadığını döndürür.(0 veya 1 şeklinde)

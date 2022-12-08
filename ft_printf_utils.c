@@ -6,7 +6,7 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:23:41 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/05 15:16:47 by sguntepe         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:07:49 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,14 @@
 
 int	ft_int(int a)
 {
-	int	ret;
+	char	*res;
+	int		chr;
 
-	ret = 0;
-	if (a == 0)
-		return (write(1, "0", 1));
-	if (a == -2147483648)
-		return (write(1, "-2147483648", 11));
-	if (a < 0)
-	{
-		ret += write(1, "-", 1);
-		a *= -1;
-	}
-	if (a >= 10)
-		ret += ft_int(a / 10);
-	write(1, &"0123456789"[a % 10], 1);
-	return (ret + 1);
+	res = ft_itoa(a);
+	chr = ft_strlen(res);
+	ft_putstr_fd(res, 1);
+	free(res);
+	return (chr);
 }
 
 int	ft_hex(unsigned int a, char c)
@@ -84,4 +76,3 @@ int	ft_unsigned(unsigned int a)
 	write(1, &"0123456789"[a % 10], 1);
 	return (ret + 1);
 }
-

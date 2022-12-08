@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 10:30:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/08 10:06:08 by sguntepe         ###   ########.fr       */
+/*   Created: 2022/10/08 12:08:53 by sguntepe          #+#    #+#             */
+/*   Updated: 2022/11/29 13:01:28 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_format(va_list arg, char c);
-int	ft_int(int a);
-int	ft_hex(unsigned int a, char c);
-int	ft_point(unsigned long a, int sign);
-int	ft_string(char *str);
-int	ft_unsigned(unsigned int a);
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
 
-#endif
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int i;
+// 	char str[] = "samiguntepe";
+// 	i = ft_strlen(str);
+// 	ft_bzero(str, 4);
+// 	write(1,&str,i);
+// 	return 0;
+// }
+
+// s dizisine n değeri kadar null değer atar.
